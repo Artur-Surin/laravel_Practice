@@ -8,4 +8,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ route('tours.index') }}">Туры</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('categories.index') }}">Категория</a>
+    </li>
 </ul>
