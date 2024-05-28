@@ -33,6 +33,14 @@
                     <th scope="row">Цена</th>
                     <td>{{ $product->price }}</td>
                 </tr>
+                <tr>
+                    <th scope="row">Категория</th>
+                    <td>
+                        <a href="{{ route('categories.show', ['category' => $product->category]) }}">
+                            {{ $product->category->title }}
+                        </a>
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </div>

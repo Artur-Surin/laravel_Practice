@@ -40,6 +40,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
+
         return view('products.show', compact('product'));
     }
 
@@ -55,12 +56,14 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
+            'category_id' => 'required',
         ]);
 
         $product = Product::findOrFail($id);
         $product->name = $data['name'];
         $product->description = $data['description'];
         $product->price = $data['price'];
+        $product->category_id = $data['category_id'];
 
         $product->save();
 

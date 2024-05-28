@@ -29,6 +29,17 @@
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
+            <div class="mb-3">
+                <label for="product-category" class="form-label">Описание</label>
+                <select class="form-control" id="product-category" name="category_id">
+                    @foreach($product->categories() as $category)
+                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                    @endforeach
+                </select>
+                @error('category')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Сохранить</button>
             </div>
